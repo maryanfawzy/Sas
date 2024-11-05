@@ -1,16 +1,9 @@
 import clsx from 'clsx'
 import React, { useEffect, useState } from 'react'
 import {Link as LinkScroll} from 'react-scroll'
-const NavLink = ({title})=> (
-    <LinkScroll
-    className='base-bold text-p4 uppercase transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5'
-    >
-    {title}
 
 
-    </LinkScroll>
 
-)
 
 
 const Header = () => {
@@ -26,6 +19,20 @@ const Header = () => {
         }
 
     },[])
+    const NavLink = ({title})=> (
+        <LinkScroll
+        onClick={()=>setIsOpen(false)}
+        to={title} 
+        offset={-100} 
+        spy 
+        smooth
+        activeClass='nav-active'
+        className='base-bold text-p4 uppercase transition-colors duration-500 cursor-pointer hover:text-p1 max-lg:my-4 max-lg:h5'
+        >
+        {title}
+    
+    
+        </LinkScroll>)
 
     const [isOpen, setIsOpen]=useState(false)
   return (
@@ -47,15 +54,17 @@ const Header = () => {
                     <nav className='max-lg:relative max-lg:z-2 max-lg:my-auto'>
                         <ul className='flex max-lg:block max-lg:px-12'>
                             <li className='nav-li'>
-                                <NavLink title = 'Features'/>
+                                <NavLink title = 'Features' to='features'/>
                                 <div className='dot'/>
                                 <NavLink title = 'Pricing'/>
                             </li>
                             <li className='nav-logo'>
                                <LinkScroll 
                                to = 'hero'
-                               offset={-100}
-                               spy smooth className={(clsx('max-lg:hidden transition-transform duration-500 cursor-pointer'))} >
+                               offset={-250}
+                               spy
+                                smooth
+                                 className={(clsx('max-lg:hidden transition-transform duration-500 cursor-pointer'))} >
                                <img src="/images/xora.svg" width={160} height={55}  />
                                </LinkScroll>
                             
