@@ -44,12 +44,12 @@ export default function Features() {
                         ))
 
                     }
-                 <ul className="relative flex justify-around flex-grow px-[5%] border-2 border-s3 rounded-7xl max-md:hidden    ">
-              <div className="absoulte bg-s3/20 top-[38%] left-0 right-0 w-full h-[1px] z-10 "></div>
+                 <ul className='relative flex justify-around flex-grow px-[5%] border-2 border-s3 rounded-7xl max-md:hidden    '>
+              <div className='absoulte bg-s3/20 top-[38%] left-0 right-0 w-full h-[1px] z-10 '></div>
               {details.map((detail) => (
-                <li key={detail.id} className="relative pt-16 px-4 pb-14  ">
-                  <div className="absolute top-8 bottom-0 left-1/2 bg-s3/20 w-[1px] h-full z-10 " />
-                  <div className="flex items-center justify-center mx-auto mb-3 bordr-2 border-s2 rounded-full hover:border-s4 transition-all duration-500 shadow-500 size-20 ">
+                <li key={detail.id} className='relative pt-16 px-4 pb-14  '>
+                  <div className='absolute top-8 bottom-0 left-1/2 bg-s3/20 w-[1px] h-full z-10 '/>
+                  <div className='flex items-center justify-center mx-auto mb-3 bordr-2 border-s2 rounded-full hover:border-s4 transition-all duration-500 shadow-500 size-20 '>
                     <img
                       src={detail.icon}
                       alt={detail.title}

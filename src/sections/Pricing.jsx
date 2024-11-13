@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Element } from 'react-scroll'
 import clsx from 'clsx';
-import { plans } from '../constance';
+import { features, plans } from '../constance';
 import CountUp from 'react-countup';
 
 const Pricing = () => {
@@ -41,7 +41,10 @@ const Pricing = () => {
 
                     )}
                     <div className={clsx('absolute left-0 right-0 z-2 flex items-center justify-center',index===1 ? '-top-6' :'-top-6 xl:-top-11' )}>
-                        <img src={plan.logo} alt={plan.title} className={clsx('object-contain drop-shadow-2xl', index===1 ? 'size-[120px]' : 'size-[88px]')} />
+                        <img src={plan.logo} 
+                        alt={plan.title} 
+                        className={clsx('object-contain drop-shadow-2xl',
+                         index===1 ? 'size-[120px]' : 'size-[88px]')} />
 
                     </div>
                     <div className={clsx('relative flex flex-col items-center' ,
@@ -61,10 +64,33 @@ const Pricing = () => {
                                 preserveValue
                                 />
                             </div>
+                            <div className='small-1 relative top-3 ml-1 uppercase'>
+
+                            </div>
 
                         </div>
 
                     </div>
+                    <div className={clsx('body-1 relative z-2 mb-10 w-full border-b-s2 pb-9 text-center text-p4',index===1 && 'border-b')}>{plan.caption}
+
+                    </div>
+                    <ul className='mx-auto space-y-4 px-7 '>
+                        {plan.features.map((feature)=>(
+                            <li key={feature.id} className='relative flex items-center gap-5 '>
+                                <img src={'/images/check.png'} className='size-10 object-contain' alt="" />
+                                <p className='flex-1 '>{feature}
+
+                                </p>
+                            </li>
+                        ))}                       
+                        
+                    </ul>
+                    <div className='mt-10 flex w-full justify-center'>
+                        <button  type="button" className="text-white bg-gradient-to-r from-purple-500 via-purple-600 to-purple-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 glow-after" >Get started</button>
+                    </div>
+                    {index === 1 && <p className='small-compact mt-9 text-center text-p3 before:content-[-] after:mx-2-.5 after:content-[-]'>
+                    Limited time offer 
+                    </p>}
 
                 </div>
 
