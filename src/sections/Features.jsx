@@ -1,7 +1,7 @@
 
 
 import React from 'react'
-import { details, features } from '../constance/index.js'
+import { details, features } from '../constance/index.jsx'
 import { Element } from 'react-scroll'
 
 export default function Features() {

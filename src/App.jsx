@@ -6,6 +6,7 @@ import Pricing from './sections/Pricing'
 import Faq from './sections/Faq'
 import Testimonials from './sections/Testimonials'
 import DownLoad from './sections/DownLoad'
+import Footer from './sections/Footer'
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
       <Faq/>
       <Testimonials/>
       <DownLoad/>
+      <Footer/>
       
       
 
